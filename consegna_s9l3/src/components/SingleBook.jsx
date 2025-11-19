@@ -10,20 +10,16 @@ class SingleBook extends Component {
     return (
       <Col xs={12} sm={6} md={4} lg={3} xxl={2}>
         <Card
+          onClick={() => {
+            this.setState({ selected: !this.state.selected })
+          }}
           className={
             'shadow border-danger overflow-hidden h-100' +
             (this.state.selected === true ? ' border-2' : ' border-0')
           }
         >
           <div className="overflow-hidden" style={{ height: 300 }}>
-            <img
-              src={this.props.imageBook}
-              alt="Libro"
-              className="w-100"
-              onClick={() => {
-                this.setState({ selected: !this.state.selected })
-              }}
-            />
+            <img src={this.props.imageBook} alt="Libro" className="w-100" />
           </div>
           <Card.Body className="d-flex flex-column">
             <Card.Title className="text-truncate fw-bold">
