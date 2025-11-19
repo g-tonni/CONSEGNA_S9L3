@@ -18,8 +18,10 @@ function App() {
 
       {/* MAIN */}
       <Row className="flex-grow-1">
-        <Col>
+        <Col xs={12}>
           <BookAlert />
+        </Col>
+        <Col className="d-flex flex-column align-items-center">
           <BookList singleBook={books} />
         </Col>
       </Row>
