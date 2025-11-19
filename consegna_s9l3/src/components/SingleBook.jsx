@@ -2,12 +2,28 @@ import { Component } from 'react'
 import { Col, Row, Card, Button } from 'react-bootstrap'
 
 class SingleBook extends Component {
+  state = {
+    selected: false,
+  }
+
   render() {
     return (
       <Col xs={12} sm={6} md={4} lg={3} xxl={2}>
-        <Card className="shadow border-0 overflow-hidden h-100">
+        <Card
+          className={
+            'shadow border-danger overflow-hidden h-100' +
+            (this.state.selected === true ? ' border-2' : ' border-0')
+          }
+        >
           <div className="overflow-hidden" style={{ height: 300 }}>
-            <img src={this.props.imageBook} alt="Libro" className="w-100" />
+            <img
+              src={this.props.imageBook}
+              alt="Libro"
+              className="w-100"
+              onClick={() => {
+                this.setState({ selected: !this.state.selected })
+              }}
+            />
           </div>
           <Card.Body className="d-flex flex-column">
             <Card.Title className="text-truncate fw-bold">
