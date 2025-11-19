@@ -21,7 +21,7 @@ function App() {
         <Col xs={12}>
           <BookAlert />
         </Col>
-        <Col className="d-flex flex-column align-items-center">
+        <Col>
           <BookList singleBook={books} />
         </Col>
       </Row>
